@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jacopo Norci | AI / Cybersecurity / IT Junior</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121a33;
+      --panel-2: #0f1730;
+      --text: #e8ecf8;
+      --muted: #aab4d4;
+      --accent: #6ea8fe;
+      --accent-2: #7ef0c2;
+      --border: #263252;
+      --shadow: 0 8px 24px rgba(0,0,0,.15);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(180deg, #08101f 0%, #0b1020 100%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(12px);
+      background: rgba(11,16,32,.75);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      z-index: 20;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+    }
+    .brand {
+      font-weight: 800;
+      letter-spacing: .3px;
+    }
+    .brand span { color: var(--accent); }
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .hero {
+      padding: 80px 0 50px;
+      display: grid;
+      grid-template-columns: 1.25fr .95fr;
+      gap: 28px;
+      align-items: center;
+    }
+    .hero-card, .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease;
+    }
+    .hero-card:hover, .card:hover {
+      transform: translateY(-2px);
+    }
+    .hero-card { padding: 38px; }
+    .eyebrow {
+      display: inline-block;
+      color: var(--accent-2);
+      background: rgba(126,240,194,.08);
+      border: 1px solid rgba(126,240,194,.18);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .3px;
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 1.02;
+      margin: 0 0 14px;
+    }
+    h1 .accent { color: var(--accent); }
+    .lead {
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 24px;
+      max-width: 60ch;
+    }
+    .cta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: .18s ease;
+      border: 1px solid var(--border);
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #8d8bff);
+      color: #09111f;
+      border: none;
+    }
+    .btn-secondary {
+      color: var(--text);
+      background: rgba(255,255,255,.02);
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .hero-side {
+      padding: 20px;
+      display: grid;
+      gap: 16px;
+    }
+    .mini {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+    }
+    .mini h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+    .mini p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    section {
+      padding: 40px 0 20px;
+    }
+    .section-title {
+      font-size: 28px;
+      margin: 0 0 16px;
+    }
+    .section-sub {
+      color: var(--muted);
+      margin: 0 0 24px;
+      max-width: 70ch;
+    }
+    .grid-3, .grid-2 {
+      display: grid;
+      gap: 24px;
+    }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .card {
+      padding: 26px;
+    }
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+    .card p, .card li {
+      color: var(--muted);
+      font-size: 15px;
+    }
+    ul.clean {
+      padding-left: 18px;
+      margin: 12px 0 0;
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .tag {
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(110,168,254,.08);
+      border: 1px solid rgba(110,168,254,.18);
+      color: #dfe9ff;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+    .timeline-item {
+      border-left: 3px solid var(--accent);
+      padding: 4px 0 4px 16px;
+    }
+    .timeline-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+    .muted { color: var(--muted); }
+    footer {
+      padding: 50px 0 60px;
+      color: var(--muted);
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,.05);
+    }
+    @media (max-width: 900px) {
+      .hero, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      nav { gap: 12px; align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">Jacopo<span> Norci</span></div>
+        <div class="nav-links">
+          <a href="#profilo">Profilo</a>
+          <a href="#competenze">Competenze</a>
+          <a href="#esperienze">Esperienze</a>
+          <a href="#progetti">Progetti</a>
+          <a href="#contatti">Contatti</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <div class="eyebrow">AI • Cybersecurity • IT Junior</div>
+        <h1>Ciao, sono <span class="accent">Jacopo Norci</span>.</h1>
+        <p class="lead">
+          Profilo junior con base tecnica in informatica, forte passione per AI e cybersecurity, apprendimento rapido e mentalità pratica. Cerco un contesto dove crescere sul campo, costruire competenze vere e portare valore fin da subito.
+        </p>
+        <div class="cta">
+          <a class="btn btn-primary" href="mailto:jacoponorci090@gmail.com">Contattami</a>
+          <a class="btn btn-secondary" href="#progetti">Vedi i progetti</a>
+        </div>
+      </div>
+      <div class="hero-side hero-card">
+        <div class="mini">
+          <h3>Posizione desiderata</h3>
+          <p>AI Junior • Cybersecurity Junior • IT Support • Automation</p>
+        </div>
+        <div class="mini">
+          <h3>Disponibilità</h3>
+          <p>Full-time, da subito. Smart working, ibrido o in sede. Disponibile a brevi trasferte.</p>
+        </div>
+        <div class="mini">
+          <h3>Base operativa</h3>
+          <p>Roma • Patente B • Automunito / motomunito</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="profilo">
+      <h2 class="section-title">Profilo</h2>
+      <p class="section-sub">
+        Ho 20 anni e coltivo da sempre una forte passione per l’informatica e la tecnologia. Ho una formazione tecnica in Informatica e un percorso universitario avviato in Ingegneria Informatica. Mi contraddistinguono determinazione, costanza e una forte spinta a crescere rapidamente in ambienti tecnologici dove poter imparare da professionisti più esperti.
+      </p>
+    </section>
+
+    <section id="competenze">
+      <h2 class="section-title">Competenze</h2>
+      <div class="card">
+        <div class="skills">
+          <span class="tag">Python base/intermedio</span>
+          <span class="tag">Linux / Parrot OS</span>
+          <span class="tag">GitHub</span>
+          <span class="tag">Visual Studio Code</span>
+          <span class="tag">HTML / Web basics</span>
+          <span class="tag">AI tools</span>
+          <span class="tag">Prompt engineering</span>
+          <span class="tag">Scripting</span>
+          <span class="tag">Problem solving</span>
+          <span class="tag">Apprendimento rapido</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="esperienze">
+      <h2 class="section-title">Esperienze</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Iron Gym — Istruttore Calisthenics / Coach Online</h3>
+          <p class="muted">Settembre 2025 – Presente • Roma</p>
+          <ul class="clean">
+            <li>Gestione clienti in palestra e online.</li>
+            <li>Pianificazione programmi personalizzati.</li>
+            <li>Vendita di servizi di coaching online.</li>
+            <li>Gestione del rapporto con il cliente e problem solving.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Sistema Consulting — Supporto tecnico web</h3>
+          <p class="muted">Esperienza operativa assistita • Roma</p>
+          <ul class="clean">
+            <li>Affiancamento a sviluppatore senior HTML.</li>
+            <li>Caricamento corsi su piattaforma digitale.</li>
+            <li>Supporto a contenuti web e organizzazione dati.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Istruzione</h2>
+      <div class="timeline card">
+        <div class="timeline-item">
+          <strong>Sapienza Università di Roma — Ingegneria Informatica</strong>
+          <span class="muted">Percorso avviato • Accesso superato con 41,5/50</span>
+        </div>
+        <div class="timeline-item">
+          <strong>Diploma ITIS indirizzo Informatica</strong>
+          <span class="muted">Conseguito 2024/2025</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="progetti">
+      <h2 class="section-title">Progetti e laboratorio</h2>
+      <p class="section-sub">Qui sotto puoi inserire 2-3 progetti reali. Anche semplici, purché concreti.</p>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Script Python</h3>
+          <p>Script personali per automazione e test. Da aggiornare con descrizione precisa, obiettivo e risultato.</p>
+        </div>
+        <div class="card">
+          <h3>Siti web base</h3>
+          <p>Realizzazione di siti web e gestione contenuti. Da arricchire con screenshot, stack usato e link.</p>
+        </div>
+        <div class="card">
+          <h3>Studio autonomo cybersecurity</h3>
+          <p>Approfondimento pratico in ambienti lab controllati, sistemi Linux e tooling tecnico.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Perché io</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Mentalità</h3>
+          <p>Quando mi pongo un obiettivo, lavoro fino a raggiungerlo. Porto energia, voglia di imparare e disponibilità a mettermi in gioco davvero.</p>
+        </div>
+        <div class="card">
+          <h3>Crescita</h3>
+          <p>Cerco un ambiente in cui imparare velocemente da figure senior, consolidare competenze tecniche e diventare una risorsa affidabile nel team.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contatti">
+      <h2 class="section-title">Contatti</h2>
+      <div class="card">
+        <p><strong>Email:</strong> <a href="mailto:jacoponorci090@gmail.com" style="color: var(--accent)">jacoponorci090@gmail.com</a></p>
+        <p><strong>Telefono:</strong> <a href="tel:+393491206095" style="color: var(--accent)">349 120 6095</a></p>
+        <p><strong>Città:</strong> Roma</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      Jacopo Norci • Roma
+    </div>
+  </footer>
+</body>
+</html>
